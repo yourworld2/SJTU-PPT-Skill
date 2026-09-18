@@ -62,9 +62,9 @@ python scripts/list_templates.py --assets-dir assets
 python scripts/generate_pptx.py --create-template ./my-template.pptx
 ```
 
-### 作为 Coze 技能安装
+### 作为 Agent 技能安装
 
-将 `pptx-generator/` 目录打包为 `.skill`（zip 格式），在扣子「我的技能」中导入即可；导入后 Agent 可根据文字大纲自动编写 JSON 并生成 PPT。
+将 `pptx-generator/` 目录打包为 `.skill`（zip 格式），在各类Agent「我的技能」中导入即可；导入后 Agent 可根据文字大纲自动编写 JSON 并生成 PPT。
 
 ## 内容 JSON 示例
 
