@@ -107,6 +107,3 @@ python scripts/smoke_test.py
 # PASS: 33 checks across 8 templates（exit 0 = 全部通过）
 ```
 
-## 模板作者
-
-basic、origin、130：李一；wine、crimson：徐臻；star：迮佳；blue：沈小丹；global：国际处。
