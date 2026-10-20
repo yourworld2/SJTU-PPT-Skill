@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    name: pptx smoke test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install python-pptx
+        run: |
+          python -m pip install --upgrade pip
+          pip install python-pptx
+
+      - name: Syntax check
+        run: python -m compileall -q sjtu-ppt-skill/pptx-generator/scripts
+
+      - name: Verify all templates are present
+        run: |
+          count=$(ls sjtu-ppt-skill/pptx-generator/assets/*.pptx | wc -l)
+          echo "templates found: $count"
+          if [ "$count" -ne 8 ]; then
+            echo "expected 8 templates, got $count"
+            ls -la sjtu-ppt-skill/pptx-generator/assets/
+            exit 1
+          fi
+
+      - name: Generate from every template (smoke test)
+        run: python sjtu-ppt-skill/pptx-generator/scripts/smoke_test.py
