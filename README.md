@@ -1,4 +1,5 @@
 # SJTU-PPT (pptx-generator)
+说明：如果你已经安装了https://github.com/yourworld2/dsh-sjtu-ppt ，可以不用重复安装这个技能了。
 
 基于 PPTX 模板 + 结构化 JSON 内容定义，自动生成排版美观、风格统一且可二次编辑的演示文稿。
 
